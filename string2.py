@@ -52,12 +52,13 @@ def not_bad(s):
 # e.g. 'abcde', the front half is 'abc', the back half 'de'.
 # Given 2 strings, a and b, return a string of the form
 #  a-front + b-front + a-back + b-back
+import math
 def front_back(a, b):
     a_length = len(a)
     b_length = len(b)
 
-    a_split = (a_length / 2) + (a_length % 2)
-    b_split = b_length / 2 + (b_length % 2)
+    a_split = int(math.floor(a_length / 2)) + (a_length % 2)
+    b_split = int(math.floor(b_length / 2)) + (b_length % 2)
 
     a_front = a[0:a_split]
     a_back = a[a_split:]
